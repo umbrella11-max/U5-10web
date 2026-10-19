@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="Explore a fashion and lifestyle product showcase, discover fashion and lifestyle concepts, and learn what makes each product useful.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NOVA STYLE — Discover What's Next">
+  <meta property="og:description" content="A fashion and lifestyle product showcase concept for modern design and emerging technology.">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2366f4ff'/%3E%3Cstop offset='1' stop-color='%237887ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='%23080b16'/%3E%3Cpath d='M17 45V19h6l18 17V19h6v26h-6L23 28v17z' fill='url(%23g)'/%3E%3C/svg%3E">
+  <title>NOVA STYLE — Discover What's Next</title>
+  <script>
+    // Apply the saved theme before styles paint to avoid a flash of the wrong theme.
+    (function(){try{var saved=localStorage.getItem("nova-style-theme");document.documentElement.dataset.theme=saved==="light"?"light":"dark";}catch(_){document.documentElement.dataset.theme="dark";}})();
+  </script>
+  <style>
+    :root{color-scheme:dark;--bg:#080b16;--panel:#101629;--panel2:#151d34;--ink:#f5f7ff;--muted:#a5aec7;--line:rgba(176,195,255,.16);--cyan:#66f4ff;--blue:#7887ff;--violet:#b57cff;--lime:#c4ff70;--radius:24px;--max:1200px}
+    [data-theme="light"]{color-scheme:light;--bg:#f7f8fc;--panel:#ffffff;--panel2:#edf0f8;--ink:#171b2b;--muted:#5d667d;--line:rgba(40,54,90,.16);--cyan:#087f91;--blue:#5667df;--violet:#8a4ec5;--lime:#4c7b10}
+    [data-theme="light"] body{background:radial-gradient(ellipse at 80% -10%,rgba(74,91,255,.09),transparent 38%),var(--bg)}
+    [data-theme="light"] .announcement{color:#505a73;background:rgba(247,248,252,.92)}
+    [data-theme="light"] .site-header{background:rgba(247,248,252,.88)}
+    [data-theme="light"] .nav-links{color:#424b64}
+    [data-theme="light"] .gradient-text{background:linear-gradient(105deg,#202641 8%,#087f91 42%,#5667df 74%,#8a4ec5);-webkit-background-clip:text;background-clip:text;color:transparent}
+    [data-theme="light"] .micro-trust{color:#626d86}
+    [data-theme="light"] .ticker{background:rgba(30,45,80,.025)}
+    [data-theme="light"] .ticker-inner{color:#626d86}
+    [data-theme="light"] .product-card{background:linear-gradient(160deg,#fff,#f0f3fa)}
+    [data-theme="light"] .product-image-wrap{background:#e9edf6}
+    [data-theme="light"] .product-tag{background:#ffffffed;color:#202641;border-color:#26345230}
+    [data-theme="light"] .manifesto-points div{color:#343d56}
+    [data-theme="light"] .benefit{background:rgba(40,54,90,.025)}
+    [data-theme="light"] .field label{color:#343d56}
+    [data-theme="light"] .field input,[data-theme="light"] .field textarea,[data-theme="light"] .field select{background:#fff;color:var(--ink)}
+    [data-theme="light"] footer{background:#eef1f8}
+    [data-theme="light"] .footer-links{color:#515b74}
+    [data-theme="light"] .footer-bottom{color:#626d86}
+    [data-theme="light"] .content-page .updated-note{color:#626d86}
+    [data-theme="light"] .modal{background:#fff}
+    [data-theme="light"] .close-modal{background:#eef1f8;color:#202641}
+    [data-theme="light"] .notice{color:#075b67;background:#e8fbfd;border-color:#087f9144}
+    [data-theme="light"] .nav-links.open{background:#f7f8fc}
+    /* Light theme contrast fixes: override colors that were designed for dark surfaces. */
+    [data-theme="light"] .announcement{color:#3f4963;background:rgba(247,248,252,.96)}
+    [data-theme="light"] .site-header{background:rgba(247,248,252,.94)}
+    [data-theme="light"] .filter-btn,[data-theme="light"] .sort-select{color:#242b40;background:#fff;border-color:rgba(40,54,90,.2)}
+    [data-theme="light"] .filter-btn.active{color:#fff;background:#087f91;border-color:#087f91}
+    [data-theme="light"] .float-card{background:rgba(255,255,255,.96);color:#171b2b;border-color:rgba(40,54,90,.18);box-shadow:0 15px 45px rgba(30,40,70,.14)}
+    [data-theme="light"] .contact-note{color:#5d667d}
+    [data-theme="light"] .footer-links{color:#3f4963}
+    [data-theme="light"] .footer-bottom{color:#505a73}
+    [data-theme="light"] .nav-links{color:#343d56}
+    [data-theme="light"] .nav-links.open{background:#fff;box-shadow:0 18px 28px rgba(30,40,70,.08)}
+    [data-theme="light"] .field input::placeholder,[data-theme="light"] .field textarea::placeholder{color:#6b7489;opacity:1}
+    [data-theme="light"] .theme-toggle{background:#fff;color:#171b2b;border-color:rgba(40,54,90,.2)}
+    [data-theme="dark"] .theme-toggle{background:#151d34;color:#f5f7ff}
+    .theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 13px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);font-weight:750;font-size:.82rem;white-space:nowrap;transition:background .2s,border-color .2s,transform .2s}
+    .theme-toggle:hover{transform:translateY(-1px);border-color:var(--cyan)}
+    .theme-toggle-icon{font-size:1.05rem;line-height:1}
+    @media(max-width:640px){.theme-toggle{margin-left:auto;padding:0 11px;font-size:.76rem}.menu-btn{margin-left:0}}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:radial-gradient(ellipse at 80% -10%,rgba(74,91,255,.19),transparent 38%),var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}img{display:block;max-width:100%}
+    :focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+    .skip{position:absolute;left:-9999px;top:8px;background:var(--cyan);color:#07101a;padding:10px 14px;border-radius:10px;z-index:99}.skip:focus{left:8px}
+    .announcement{border-bottom:1px solid var(--line);text-align:center;padding:9px 16px;color:#cbd5f5;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(8,11,22,.85)}
+    .site-header{position:sticky;top:0;z-index:20;background:rgba(8,11,22,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav-wrap{max-width:var(--max);margin:auto;padding:15px 24px;display:flex;align-items:center;gap:26px}
+    .brand{display:inline-flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.07em;font-size:1.2rem;white-space:nowrap}
+    .brand-mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--cyan),var(--blue) 58%,var(--violet));display:grid;place-items:center;color:#080b16;font-weight:950;font-size:1rem;box-shadow:0 0 26px #667aff44}
+    .nav-links{display:flex;align-items:center;gap:25px;margin-left:auto;font-size:.88rem;color:#c4cbe0}.nav-links a:hover,.footer-links a:hover{color:var(--cyan)}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid transparent;border-radius:999px;padding:12px 18px;font-weight:800;background:linear-gradient(110deg,var(--cyan),#a7b5ff);color:#07101a;transition:transform .2s,filter .2s}
+    .nav-cta:hover,.button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .button-secondary{background:rgba(255,255,255,.03);color:var(--ink);border-color:var(--line)}
+    .menu-btn{display:none;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:12px;width:42px;height:42px}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .hero{padding:68px 24px 48px;max-width:var(--max);margin:auto}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center;min-height:550px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:850}
+    .eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan)}
+    h1{font-size:clamp(3.2rem,7.5vw,6.8rem);line-height:.91;letter-spacing:-.085em;margin:24px 0;max-width:680px}
+    .gradient-text{background:linear-gradient(105deg,#fff 8%,var(--cyan) 42%,#a6aaff 74%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-copy p{color:var(--muted);font-size:1.08rem;max-width:530px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .micro-trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;color:#8994b3;font-size:.76rem}.micro-trust span:before{content:"✦";color:var(--cyan);margin-right:7px}
+    .hero-visual{min-height:480px;position:relative;display:grid;place-items:center;isolation:isolate}
+    .orbit{position:absolute;width:min(95%,480px);aspect-ratio:1;border:1px solid rgba(102,244,255,.24);border-radius:50%;box-shadow:0 0 65px #5b79ff18,inset 0 0 55px #4a5cff13;animation:rotate 32s linear infinite}
+    .orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(181,124,255,.3);border-radius:50%;inset:10% -6%;transform:rotate(54deg)}
+    .orbit:after{inset:18% -1%;transform:rotate(-46deg);border-color:rgba(102,244,255,.2)}
+    .hero-image{width:76%;height:420px;object-fit:cover;border-radius:44% 44% 28px 28px;position:relative;z-index:1;border:1px solid #c8d8ff33;box-shadow:0 30px 90px #0008;mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}
+    .float-card{position:absolute;z-index:2;background:rgba(15,22,42,.87);border:1px solid var(--line);backdrop-filter:blur(15px);padding:13px 16px;border-radius:16px;box-shadow:0 15px 45px #0005;font-size:.78rem}
+    .float-card strong{display:block;font-size:.9rem}.float-card small{color:var(--muted)}.float-one{top:13%;right:0}.float-two{bottom:13%;left:0}.signal{display:inline-block;width:7px;height:7px;background:var(--lime);border-radius:50%;margin-right:7px;box-shadow:0 0 12px var(--lime)}
+    .ticker{border-block:1px solid var(--line);background:rgba(255,255,255,.02);overflow:hidden}
+    .ticker-inner{max-width:var(--max);margin:auto;padding:16px 24px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#8f9bbd;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+    .section{padding:88px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}.section-head h2{font-size:clamp(2.1rem,4.5vw,4rem);letter-spacing:-.075em;line-height:1;margin:12px 0 0}.section-head p{max-width:400px;color:var(--muted);margin:0}
+    .product-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
+    .search-wrap{flex:1;min-width:220px;display:flex;align-items:center;gap:10px;padding:0 15px;height:46px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+    .search-wrap input{width:100%;min-width:0;background:transparent;border:0;outline:none;color:var(--ink)}
+    .filter-btn,.sort-select{border:1px solid var(--line);border-radius:999px;padding:11px 15px;background:var(--panel);color:#cbd3ea;font-size:.82rem;font-weight:750}
+    .filter-btn.active{background:var(--cyan);border-color:var(--cyan);color:#061018}
+    .sort-select{max-width:100%}
+    .product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .product-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(160deg,#141b30,#0d1221);min-width:0;transition:transform .25s,border-color .25s}
+    .product-card:hover{transform:translateY(-5px);border-color:#8d9cff66}
+    .product-image-wrap{position:relative;aspect-ratio:1.25;background:#111a2d;overflow:hidden}
+    .product-image{width:100%;height:100%;object-fit:cover;transition:transform .45s;opacity:.92}
+    .product-card:hover .product-image{transform:scale(1.045)}
+    .product-tag{position:absolute;top:13px;left:13px;border:1px solid #dce6ff38;background:#080b16c9;color:#eaf3ff;padding:6px 10px;border-radius:999px;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase}
+    .product-body{padding:19px}.product-category{color:var(--cyan);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+    .product-title-row{display:flex;justify-content:space-between;gap:12px;align-items:start;margin-top:7px}.product-title-row h3{margin:0;font-size:1.1rem;letter-spacing:-.04em}.product-price{white-space:nowrap;font-size:.9rem;font-weight:850}
+    .product-body p{color:var(--muted);font-size:.85rem;margin:10px 0 17px}.product-actions{display:flex;gap:9px;flex-wrap:wrap}.product-actions button{font-size:.78rem;padding:10px 13px}
+    .empty-state{grid-column:1/-1;text-align:center;padding:48px 18px;border:1px dashed var(--line);border-radius:20px;color:var(--muted)}
+    .manifesto{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:var(--panel)}
+    .manifesto-art{min-height:360px;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#5b66d7 0,transparent 38%),linear-gradient(135deg,#182541,#0b1020)}
+    .cube{width:150px;height:150px;border:1px solid #a8faffaa;transform:rotate(30deg) skew(-8deg);box-shadow:0 0 65px #66f4ff2e,inset 0 0 35px #66f4ff19;position:relative}
+    .cube:before,.cube:after{content:"";position:absolute;inset:18px;border:1px solid #b57cff99;transform:translate(20px,-20px)}.cube:after{transform:translate(-20px,20px);border-color:#66f4ff66}
+    .manifesto-copy{padding:clamp(28px,5vw,62px);align-self:center}.manifesto-copy h2{font-size:clamp(2.3rem,4.7vw,4.5rem);letter-spacing:-.075em;line-height:.98;margin:18px 0}.manifesto-copy p{color:var(--muted);max-width:530px}.manifesto-points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}.manifesto-points div{border-top:1px solid var(--line);padding-top:12px;font-size:.82rem;color:#d5ddf4}.manifesto-points small{display:block;color:var(--muted);margin-top:3px}
+    .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.benefit{padding:25px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.025)}.benefit-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:#6a7cff1b;color:var(--cyan);font-size:1.25rem}.benefit h3{font-size:1rem;margin:17px 0 7px}.benefit p{color:var(--muted);font-size:.86rem;margin:0}
+    .faq-list{display:grid;gap:10px;max-width:850px;margin:0 auto}.faq-list details{border:1px solid var(--line);border-radius:15px;background:var(--panel);padding:17px 20px}.faq-list summary{font-weight:800;cursor:pointer}.faq-list details p{color:var(--muted);margin-bottom:0;font-size:.9rem}
+    .contact-panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;padding:clamp(25px,5vw,54px);border:1px solid var(--line);border-radius:28px;background:radial-gradient(ellipse at 10% 0%,#5366ff20,transparent 50%),var(--panel)}
+    .contact-copy h2{font-size:clamp(2.3rem,4vw,3.8rem);letter-spacing:-.075em;line-height:.98;margin:16px 0}.contact-copy p{color:var(--muted)}.contact-note{font-size:.76rem;color:#7e8aa9;margin-top:20px}
+    .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.8rem;font-weight:750;color:#dce3f7}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:12px;background:#080d1b;color:var(--ink);padding:13px 14px}.field textarea{min-height:120px;resize:vertical}.form-status{grid-column:1/-1;min-height:1.3em;color:var(--cyan);font-size:.85rem}
+    footer{border-top:1px solid var(--line);background:#060811}.footer-main{max-width:var(--max);margin:auto;padding:45px 24px 30px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}.footer-intro p{color:var(--muted);max-width:330px;font-size:.87rem}.footer-col h3{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin:5px 0 14px}.footer-links{display:grid;gap:10px;color:#9ca8c6;font-size:.85rem}.footer-bottom{max-width:var(--max);margin:auto;padding:17px 24px 25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;color:#7783a3;font-size:.76rem}
+
+    .content-page{display:none;padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:90px}
+    .content-page-inner{max-width:900px;margin:auto;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,5vw,54px)}
+    .content-page h2{font-size:clamp(2.2rem,5vw,4rem);line-height:1;letter-spacing:-.075em;margin:12px 0 20px}
+    .content-page h3{font-size:1.1rem;letter-spacing:-.03em;margin:26px 0 8px}
+    .content-page p,.content-page li{color:var(--muted);max-width:75ch}
+    .content-page ul{padding-left:22px}
+    .content-page .updated-note{font-size:.8rem;color:#8994b3;border-top:1px solid var(--line);padding-top:15px;margin-top:28px}
+    .content-page .contact-form{margin-top:22px}
+    .standalone-contact-form{max-width:700px}
+    body.page-mode main,body.page-mode .announcement{display:none}
+    body.page-mode .content-page.page-active{display:block;min-height:calc(100vh - 250px)}
+    body.page-mode .site-header{position:relative}
+    body.page-mode footer{display:block}
+    .modal-backdrop{position:fixed;inset:0;z-index:40;background:#02040bd9;display:none;place-items:center;padding:18px}.modal-backdrop.open{display:grid}.modal{width:min(620px,100%);max-height:90dvh;overflow:auto;background:#101629;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 30px 100px #000b}.modal-head{display:flex;justify-content:space-between;align-items:start;gap:15px}.modal-head h2{margin:0;font-size:1.6rem;letter-spacing:-.05em}.close-modal{border:1px solid var(--line);border-radius:50%;background:#1b2440;color:var(--ink);width:40px;height:40px}.modal img{width:100%;height:220px;object-fit:cover;border-radius:15px;margin:18px 0}.modal p{color:var(--muted)}.notice{border:1px solid #66f4ff44;background:#66f4ff0c;color:#b9faff;padding:12px 14px;border-radius:12px;font-size:.8rem}
+    @keyframes rotate{to{transform:rotate(360deg)}}
+    @media(max-width:900px){.nav-links{gap:15px}.nav-cta{display:none}.hero-grid{gap:18px}.hero-visual{min-height:400px}.hero-image{height:350px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.manifesto{grid-template-columns:1fr 1fr}.contact-panel{grid-template-columns:1fr}.footer-main{grid-template-columns:1.2fr 1fr 1fr}}
+    @media(max-width:640px){.announcement{font-size:.62rem}.nav-wrap{padding:12px 16px;gap:12px}.brand{font-size:1.05rem}.menu-btn{display:block;margin-left:auto}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#0b1020;border-bottom:1px solid var(--line);padding:18px 22px 22px;flex-direction:column;align-items:stretch;gap:16px}.nav-links.open{display:flex}.container{padding:0 16px}.hero{padding:42px 16px 30px}.hero-grid{grid-template-columns:1fr;gap:0}.hero-copy p{font-size:.98rem}.hero-visual{min-height:340px;margin-top:15px}.hero-image{height:300px;width:72%}.orbit{width:82%}.float-one{right:0;top:7%}.float-two{bottom:7%;left:0}.ticker-inner{justify-content:center;font-size:.62rem;gap:12px 20px}.section{padding:60px 0}.section-head{align-items:flex-start;flex-direction:column;gap:12px}.section-head h2{font-size:2.6rem}.product-grid{gap:12px}.product-body{padding:13px}.product-title-row{display:block}.product-price{display:block;margin-top:5px}.product-title-row h3{font-size:.98rem}.product-body p{font-size:.8rem}.product-actions button{width:100%}.filter-btn{padding:9px 12px;font-size:.75rem}.search-wrap{flex-basis:100%}.manifesto{grid-template-columns:1fr}.manifesto-art{min-height:250px}.manifesto-copy{padding:29px 23px}.manifesto-points{gap:10px}.benefit-grid{grid-template-columns:1fr}.contact-panel{padding:24px 18px;gap:20px}.contact-form{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-main{grid-template-columns:1fr 1fr;padding:35px 18px 25px;gap:25px 18px}.footer-intro{grid-column:1/-1}.footer-bottom{padding:16px 18px 22px;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="announcement">A CONCEPT PRODUCT SHOWCASE <span aria-hidden="true">✦</span> BUILT FOR WHAT'S NEXT</div>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="NOVA STYLE home"><span class="brand-mark" aria-hidden="true">N</span><span>NOVA<span style="color:var(--cyan)">/</span>STYLE</span></a>
+      <nav class="nav-links" id="mainNav" aria-label="Main navigation">
+        <a href="#products">Discover</a><a href="#approach">Our approach</a><a href="#benefits">Why NOVA STYLE</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#products">Explore collection <span aria-hidden="true">↗</span></a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="true"><span class="theme-toggle-icon" id="themeIcon" aria-hidden="true">☀</span><span id="themeLabel">Light mode</span></button>
+      <button class="menu-btn" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">☰</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Style meets everyday life</span>
+          <h1 id="heroTitle">Discover<br>what's <span class="gradient-text">next.</span></h1>
+          <p>A curated fashion and lifestyle showroom for expressive style, useful accessories, and considered everyday living. Explore the collection and find the details that matter to you.</p>
+          <div class="hero-actions"><a class="button" href="#products">Explore the collection <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="#approach">Our point of view</a></div>
+          <div class="micro-trust"><span>Design-led concepts</span><span>Curated discovery</span><span>Made to explore</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Fashion editorial artwork">
+          <div class="orbit" aria-hidden="true"></div>
+          <img class="hero-image" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85" alt="Fashion editorial portrait showing a contemporary outfit" width="1000" height="1200" fetchpriority="high">
+          <div class="float-card float-one"><strong><span class="signal"></span>Future-facing design</strong><small>Style for everyday life</small></div>
+          <div class="float-card float-two"><strong>Curiosity, curated.</strong><small>Explore a new perspective ↗</small></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Showcase themes"><div class="ticker-inner"><span>◈ Style discovery</span><span>✳ Considered details</span><span>⌁ Everyday essentials</span><span>◎ Personal expression</span></div></div>
+
+    <section class="section container" id="products" aria-labelledby="productsTitle">
+      <div class="section-head"><div><span class="eyebrow">The curated edit</span><h2 id="productsTitle">Find your next favorite.</h2></div><p>Browse illustrative fashion and lifestyle concepts. This is a design prototype, not a live store; products, specifications, and prices are examples only.</p></div>
+      <div class="product-tools">
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="productSearch" type="search" placeholder="Search concepts…" aria-label="Search fashion and lifestyle finds"></label>
+        <button class="filter-btn active" type="button" data-filter="All" aria-pressed="true">All concepts</button>
+        <button class="filter-btn" type="button" data-filter="Fashion" aria-pressed="false">Fashion</button>
+        <button class="filter-btn" type="button" data-filter="Accessories" aria-pressed="false">Accessories</button>
+        <button class="filter-btn" type="button" data-filter="Living" aria-pressed="false">Home &amp; living</button>
+        <label for="sortProducts" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Sort concepts</label>
+        <select class="sort-select" id="sortProducts" aria-label="Sort concepts"><option value="featured">Featured</option><option value="low">Illustrative price: low to high</option><option value="high">Illustrative price: high to low</option><option value="name">Name: A to Z</option></select>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section container" id="approach" aria-labelledby="approachTitle">
+      <div class="manifesto">
+        <div class="manifesto-art" aria-hidden="true"><div class="cube"></div></div>
+        <div class="manifesto-copy"><span class="eyebrow">A working philosophy</span><h2 id="approachTitle">Less noise.<br><span class="gradient-text">More meaning.</span></h2><p>Great products should solve a real problem, feel intuitive to use, and earn their place in everyday life. NOVA STYLE is a concept for presenting products with clarity instead of clutter.</p><div class="manifesto-points"><div><strong>Purpose first</strong><small>Explain what it does and why it matters.</small></div><div><strong>Details matter</strong><small>Make features and trade-offs easy to understand.</small></div><div><strong>Design with intent</strong><small>Visual style should support usability.</small></div><div><strong>Stay transparent</strong><small>Show verified information, not invented claims.</small></div></div></div>
+      </div>
+    </section>
+
+    <section class="section container" id="benefits" aria-labelledby="benefitsTitle">
+      <div class="section-head"><div><span class="eyebrow">The experience</span><h2 id="benefitsTitle">A clearer way to discover.</h2></div><p>The final live store should replace these concept principles with specific, verifiable benefits for its chosen product category.</p></div>
+      <div class="benefit-grid">
+        <article class="benefit"><div class="benefit-icon" aria-hidden="true">⌕</div><h3>Find the right fit</h3><p>Search and filters help visitors narrow a collection and focus on relevant options.</p></article>
+        <article class="benefit"><div class="benefit-icon" aria-hidden="true">◇</div><h3>Understand the details</h3><p>Product descriptions should clearly explain uses, important features, and limitations.</p></article>
+        <article class="benefit"><div class="benefit-icon" aria-hidden="true">↗</div><h3>Take the next step</h3><p>Give visitors a straightforward way to ask questions or continue to a verified product destination.</p></article>
+      </div>
+    </section>
+
+
+  </main>
+
+
+  <section class="content-page" id="shipping" aria-labelledby="shippingTitle">
+    <div class="container"><div class="content-page-inner">
+      <span class="eyebrow">Customer care</span><h2 id="shippingTitle">Shipping information</h2>
+      <p>NOVA STYLE is currently a product showcase prototype and does not dispatch orders. Before launch, this page must explain the destinations served, order processing times, delivery estimates, shipping costs, carriers, and tracking options.</p>
+      <h3>Before placing an order</h3><ul><li>Review shipping costs and estimated delivery windows before payment.</li><li>Check that your delivery address is complete and accurate.</li><li>International deliveries may involve customs duties or taxes depending on the destination and applicable law.</li></ul>
+      <h3>Tracking and delays</h3><p>For a live store, explain how tracking details are shared and how customers can ask for help with delayed shipments.</p>
+      <p class="updated-note">Template only — replace with the real shipping policy before accepting orders.</p>
+    </div></div>
+  </section>
+  <section class="content-page" id="returns" aria-labelledby="returnsTitle">
+    <div class="container"><div class="content-page-inner">
+      <span class="eyebrow">Customer care</span><h2 id="returnsTitle">Returns &amp; exchanges</h2>
+      <p>NOVA STYLE does not currently sell or ship products through this prototype. The live policy must reflect the products sold, the markets served, and applicable consumer-protection requirements.</p>
+      <h3>Before requesting a return</h3><ul><li>Keep your order confirmation and relevant product packaging.</li><li>Check the final policy for eligibility, return windows, product condition, exclusions, and return-shipping responsibility.</li><li>For damaged or incorrect items, provide order details and contact the verified support channel.</li></ul>
+      <h3>Refunds and exchanges</h3><p>Publish the real refund method, exchange availability, and expected processing timeline before launch.</p>
+      <p class="updated-note">Template only — this is not legal advice and does not establish a specific return entitlement or deadline.</p>
+    </div></div>
+  </section>
+  <section class="content-page" id="contact" aria-labelledby="contactTitle">
+    <div class="container"><div class="content-page-inner">
+      <span class="eyebrow">Start a conversation</span><h2 id="contactTitle">Contact NOVA STYLE</h2>
+      <p>Have a question about a product, collaboration, or the collection? This enquiry form is a preview only. It does not send or store messages until a secure form endpoint is connected.</p>
+      <form class="contact-form standalone-contact-form" id="contactForm">
+        <div class="field"><label for="contactName">Your name</label><input id="contactName" name="name" autocomplete="name" required maxlength="100" placeholder="Name"></div>
+        <div class="field"><label for="contactEmail">Email address</label><input id="contactEmail" name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com"></div>
+        <div class="field full"><label for="contactTopic">What is this about?</label><select id="contactTopic" name="topic"><option>Product enquiry</option><option>Partnership</option><option>Press or media</option><option>General question</option></select></div>
+        <div class="field full"><label for="contactMessage">Your message</label><textarea id="contactMessage" name="message" required maxlength="3000" placeholder="Tell us what you'd like to know…"></textarea></div>
+        <div class="field full"><button class="button" type="submit">Preview enquiry ↗</button></div>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+      <p class="updated-note">Add verified business contact details before launch.</p>
+    </div></div>
+  </section>
+  <section class="content-page" id="faq" aria-labelledby="faqTitle">
+    <div class="container"><div class="content-page-inner">
+      <span class="eyebrow">Quick answers</span><h2 id="faqTitle">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>Is NOVA STYLE a live store?</summary><p>No. NOVA STYLE is a provisional brand concept for this website prototype. No actual business or inventory has been confirmed.</p></details>
+        <details><summary>Are the products and prices real?</summary><p>No. Product names, descriptions, images, and example prices are illustrative placeholders and are not offers for sale.</p></details>
+        <details><summary>Can I purchase a product here?</summary><p>No. Payment processing, inventory, shipping, and checkout are not connected. This website is intended to showcase products and collect enquiries after a real form endpoint is connected.</p></details>
+        <details><summary>How can I contact NOVA STYLE?</summary><p>Use the contact page to preview the enquiry experience. Message delivery must be connected before launch.</p></details>
+      </div>
+      <p class="updated-note">Prototype FAQ — update these answers to match the real business before launch.</p>
+    </div></div>
+  </section>
+  <section class="content-page" id="privacy" aria-labelledby="privacyTitle">
+    <div class="container"><div class="content-page-inner">
+      <span class="eyebrow">Site information</span><h2 id="privacyTitle">Privacy policy</h2>
+      <p>This is a planning template, not a complete legal privacy notice. The live policy must identify the responsible business, data collected, purposes, retention periods, service providers, applicable user rights, and contact details.</p>
+      <h3>Information and purpose</h3><p>Only collect information needed for clearly explained purposes. The contact form on this prototype does not send or store submitted information.</p>
+      <h3>Cookies, analytics and marketing</h3><p>Disclose the analytics, advertising, cookies, and marketing services actually used, and implement applicable consent or opt-out requirements.</p>
+      <h3>Your choices</h3><p>Explain how visitors can exercise applicable privacy rights and contact the responsible business.</p>
+      <p class="updated-note">Privacy template — replace with a reviewed policy based on the actual business, services, and markets.</p>
+    </div></div>
+  </section>
+  <section class="content-page" id="terms" aria-labelledby="termsTitle">
+    <div class="container"><div class="content-page-inner">
+      <span class="eyebrow">Site information</span><h2 id="termsTitle">Terms of service</h2>
+      <p>This website is a product showcase prototype. It does not accept orders, process payments, or create a purchase contract.</p>
+      <h3>Product information</h3><p>Product names, images, descriptions, and example prices are illustrative and must not be treated as verified offers or confirmed inventory.</p>
+      <h3>Live store terms</h3><p>Before launch, publish terms covering the actual business identity, product details, prices and taxes, order acceptance, payment, delivery, returns, warranties where applicable, acceptable use, dispute resolution, and governing law.</p>
+      <h3>Updates and contact</h3><p>Include an effective date, explain how material changes are communicated, and provide verified business contact details.</p>
+      <p class="updated-note">Terms template — not legal advice and not a substitute for terms reviewed for the real business and target markets.</p>
+    </div></div>
+  </section>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-intro"><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">N</span><span>NOVA<span style="color:var(--cyan)">/</span>STYLE</span></a><p>A provisional product showcase concept exploring modern design, useful innovation, and clearer product discovery.</p></div>
+      <div class="footer-col"><h3>Explore</h3><nav class="footer-links" aria-label="Footer explore links"><a href="#products">Product showcase</a><a href="#approach">Our approach</a><a href="#faq">Frequently asked questions</a><a href="#contact">Contact NOVA STYLE</a></nav></div>
+      <div class="footer-col"><h3>Customer care</h3><nav class="footer-links" aria-label="Footer customer care links"><a href="#shipping">Shipping information</a><a href="#returns">Returns &amp; exchanges</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms of service</a></nav><p style="font-size:.76rem;color:#7783a3">Prototype policies must be finalized before launch.</p></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> NOVA STYLE concept. All rights reserved.</span><span>Prototype only · No live sales or message delivery</span></div>
+  </footer>
+
+  <div class="modal-backdrop" id="productModal" role="presentation">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+      <div class="modal-head"><h2 id="modalTitle">Product concept</h2><button class="close-modal" id="closeModal" type="button" aria-label="Close product details">✕</button></div>
+      <img id="modalImage" src="" alt="" width="900" height="600">
+      <div class="product-category" id="modalCategory"></div>
+      <p id="modalDescription"></p>
+      <div class="notice">Concept preview only. Product details, availability, and illustrative prices must be verified before commercial use.</div>
+    </section>
+  </div>
+
+  <script>
+    "use strict";
+    const products = [
+      {id:1,name:"Everyday Carry Tote",category:"Accessories",price:38,tag:"Everyday favorite",description:"A versatile tote concept for carrying daily essentials. A live listing should confirm dimensions, material, care instructions, and what is included.",image:"https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=900&q=82"},
+      {id:2,name:"The Weekend Layer",category:"Fashion",price:68,tag:"Style edit",description:"A relaxed layering concept for everyday outfits. Confirm fabric composition, fit, available sizes, care instructions, and stock before launch.",image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=82"},
+      {id:3,name:"Sculptural Everyday Vase",category:"Living",price:32,tag:"Home edit",description:"A decorative home concept for adding shape and character to a space. A real listing should include dimensions, material, and care guidance.",image:"https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=900&q=82"},
+      {id:4,name:"Color Pop Crossbody",category:"Accessories",price:45,tag:"Fresh pick",description:"A compact bag concept for everyday plans. Confirm size, strap details, materials, storage capacity, and available colors before selling.",image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=82"},
+      {id:5,name:"Relaxed Daily Shirt",category:"Fashion",price:49,tag:"Easy favorite",description:"A wardrobe staple concept. A live product page should provide accurate sizing, fabric details, fit notes, care instructions, and availability.",image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=900&q=82"},
+      {id:6,name:"Soft Shape Cushion",category:"Living",price:28,tag:"Living edit",description:"A soft furnishing concept for a considered home. Confirm dimensions, fabric, filling, care instructions, and color options before launch.",image:"https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=900&q=82"}
+    ];
+    const state = {filter:"All",search:"",sort:"featured"};
+    const $ = (selector,root=document)=>root.querySelector(selector);
+    const $$ = (selector,root=document)=>Array.from(root.querySelectorAll(selector));
+    const themeToggle = $("#themeToggle");
+    const themeIcon = $("#themeIcon");
+    const themeLabel = $("#themeLabel");
+    function applyTheme(theme, persist=true){
+      const normalized = theme === "light" ? "light" : "dark";
+      document.documentElement.dataset.theme = normalized;
+      const isDark = normalized === "dark";
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+      themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+      themeIcon.textContent = isDark ? "☀" : "☾";
+      themeLabel.textContent = isDark ? "Light mode" : "Dark mode";
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      if(themeColor) themeColor.content = isDark ? "#080b16" : "#f7f8fc";
+      if(persist){try{localStorage.setItem("nova-style-theme", normalized);}catch(_){}}
+    }
+    applyTheme(document.documentElement.dataset.theme || "dark", false);
+    themeToggle.addEventListener("click",()=>applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark"));
+    const money = value => new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(value);
+    const safeText = value => String(value).replace(/[&<>"']/g, char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+    const productGrid = $("#productGrid");
+    function visibleProducts(){
+      let list=products.filter(p=>(state.filter==="All"||p.category===state.filter)&&(p.name+" "+p.category+" "+p.description).toLowerCase().includes(state.search.toLowerCase()));
+      if(state.sort==="low")list.sort((a,b)=>a.price-b.price);
+      if(state.sort==="high")list.sort((a,b)=>b.price-a.price);
+      if(state.sort==="name")list.sort((a,b)=>a.name.localeCompare(b.name));
+      return list;
+    }
+    function renderProducts(){
+      const list=visibleProducts();
+      if(!list.length){productGrid.innerHTML='<div class="empty-state"><strong>No concepts found.</strong><br>Try a different search or category.</div>';return;}
+      productGrid.innerHTML=list.map(p=>`<article class="product-card"><div class="product-image-wrap"><img class="product-image" src="${safeText(p.image)}" alt="${safeText(p.name)} product image" width="900" height="720" loading="lazy"><span class="product-tag">${safeText(p.tag)}</span></div><div class="product-body"><div class="product-category">${safeText(p.category)}</div><div class="product-title-row"><h3>${safeText(p.name)}</h3><span class="product-price">${money(p.price)}*</span></div><p>${safeText(p.description)}</p><div class="product-actions"><button class="button button-secondary" type="button" data-details="${p.id}">View details ↗</button></div></div></article>`).join("");
+    }
+    function setFilter(filter){
+      state.filter=filter;
+      $$(".filter-btn").forEach(b=>{const active=b.dataset.filter===filter;b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active));});
+      renderProducts();
+    }
+    productGrid.addEventListener("click",event=>{
+      const button=event.target.closest("[data-details]");
+      if(!button)return;
+      const p=products.find(item=>item.id===Number(button.dataset.details));
+      if(!p)return;
+      $("#modalTitle").textContent=p.name;
+      $("#modalCategory").textContent=p.category+" · "+money(p.price)+" illustrative price";
+      $("#modalDescription").textContent=p.description;
+      $("#modalImage").src=p.image;
+      $("#modalImage").alt=p.name+" product image";
+      $("#productModal").classList.add("open");
+      $("#closeModal").focus();
+    });
+    function closeModal(){$("#productModal").classList.remove("open");}
+    $("#closeModal").addEventListener("click",closeModal);
+    $("#productModal").addEventListener("click",event=>{if(event.target===$("#productModal"))closeModal();});
+    document.addEventListener("keydown",event=>{if(event.key==="Escape")closeModal();});
+    $$(".filter-btn").forEach(b=>b.addEventListener("click",()=>setFilter(b.dataset.filter)));
+    $("#productSearch").addEventListener("input",event=>{state.search=event.target.value;renderProducts();});
+    $("#sortProducts").addEventListener("change",event=>{state.sort=event.target.value;renderProducts();});
+    $("#menuToggle").addEventListener("click",()=>{
+      const open=$("#mainNav").classList.toggle("open");
+      $("#menuToggle").setAttribute("aria-expanded",String(open));
+    });
+    $("#mainNav").addEventListener("click",event=>{
+      if(event.target.closest("a")){$("#mainNav").classList.remove("open");$("#menuToggle").setAttribute("aria-expanded","false");}
+    });
+    $("#contactForm").addEventListener("submit",event=>{
+      event.preventDefault();
+      if(!event.currentTarget.reportValidity())return;
+      $("#formStatus").textContent="Preview only: no message was sent or stored. Connect a real form endpoint before launch.";
+    });
+    $("#year").textContent=new Date().getFullYear();
+
+    const pageSections = $$(".content-page");
+    const baseTitle = "NOVA STYLE — Discover What's Next";
+    function renderPageRoute(){
+      const route = window.location.hash.slice(1);
+      const target = pageSections.find(section => section.id === route);
+      pageSections.forEach(section => section.classList.toggle("page-active", section === target));
+      document.body.classList.toggle("page-mode", Boolean(target));
+      if(target){
+        document.title = (target.querySelector("h2")?.textContent || "Information") + " | NOVA STYLE";
+        window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+      } else {
+        document.title = baseTitle;
+      }
+    }
+    window.addEventListener("hashchange",renderPageRoute);
+    renderPageRoute();
+    renderProducts();
+  </script>
+</body>
+</html>
